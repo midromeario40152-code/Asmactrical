@@ -1,376 +1,376 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnyDoors - Unveiling a world of wonder</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #343434;
-            --light-bg: #ffffff;
-            --text-main: #343434;
-        }
-        
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-main);
-            font-family: 'Google Sans', 'SN Pro', system-ui, -apple-system, sans-serif;
-            letter-spacing: -0.01em;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asmactrical - Premium Video Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #cfdeff;
+            --light-bg: #ffffff;
+            --text-main: #0f172a;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            font-family: 'SN Pro', 'Inter', system-ui, -apple-system, sans-serif;
+            letter-spacing: -0.01em;
+        }
 
-        .search-container {
-            background: #f1f5f9;
-            transition: all 0.3s ease;
-        }
+        .search-container {
+            background: #f1f5f9;
+            transition: all 0.3s ease;
+        }
 
-        .search-container:focus-within {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
-        }
+        .search-container:focus-within {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+        }
 
-        .video-thumbnail-wrapper {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #f8fafc;
-        }
+        .video-thumbnail-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f8fafc;
+        }
 
-        .video-thumbnail-wrapper img {
-            transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
-        }
+        .video-thumbnail-wrapper img {
+            transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+        }
 
-        .video-card:hover .video-thumbnail-wrapper img {
-            transform: scale(1.03);
-        }
+        .video-card:hover .video-thumbnail-wrapper img {
+            transform: scale(1.03);
+        }
 
-        .short-card {
-            aspect-ratio: 9/16;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            background: #f1f5f9;
-        }
+        .short-card {
+            aspect-ratio: 9/16;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            background: #f1f5f9;
+        }
 
-        .short-card img {
-            width: 100%;
-            height: 100%;
-            object-cover: cover;
-            transition: transform 0.5s ease;
-        }
+        .short-card img {
+            width: 100%;
+            height: 100%;
+            object-cover: cover;
+            transition: transform 0.5s ease;
+        }
 
-        .short-card:hover img {
-            transform: scale(1.05);
-        }
+        .short-card:hover img {
+            transform: scale(1.05);
+        }
 
-        /* YouTube-like Player Layout */
-        .player-grid {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 24px;
-        }
+        /* YouTube-like Player Layout */
+        .player-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 24px;
+        }
 
-        @media (max-width: 1024px) {
-            .player-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        @media (max-width: 1024px) {
+            .player-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
 
-        .shimmer {
-            background: linear-gradient(90deg, #f1f5f9 25%, #f8fafc 50%, #f1f5f9 75%);
-            background-size: 200% 100%;
-            animation: loading 2s infinite linear;
-        }
+        .shimmer {
+            background: linear-gradient(90deg, #f1f5f9 25%, #f8fafc 50%, #f1f5f9 75%);
+            background-size: 200% 100%;
+            animation: loading 2s infinite linear;
+        }
 
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-    </style>
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-100">
-        <div class="max-w-[1800px] mx-auto flex items-center justify-between">
-            <!-- Brand -->
-            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.reload()">
-                <span class="text-2xl font-bold tracking-tighter text-slate-900">AnyDoor</span>
-            </div>
+    <!-- Navbar -->
+    <nav class="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-100">
+        <div class="max-w-[1800px] mx-auto flex items-center justify-between">
+            <!-- Brand -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.reload()">
+                <span class="text-2xl font-bold tracking-tighter text-slate-900">Asmactrical</span>
+            </div>
 
-            <!-- Search -->
-            <div class="flex-1 max-w-2xl px-8">
-                <div class="search-container flex items-center px-5 py-2.5 rounded-full">
-                    <input type="text" id="searchInput" placeholder="Tìm kiếm những video bạn thích ....." class="bg-transparent w-full outline-none text-sm font-medium text-slate-700">
-                    <button onclick="searchVideos()" class="ml-3 text-slate-400 hover:text-blue-600 transition-colors">
-                        <i class="fas fa-search text-sm"></i>
-                    </button>
-                </div>
-            </div>
+            <!-- Search -->
+            <div class="flex-1 max-w-2xl px-8">
+                <div class="search-container flex items-center px-5 py-2.5 rounded-full">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm nội dung..." class="bg-transparent w-full outline-none text-sm font-medium text-slate-700">
+                    <button onclick="searchVideos()" class="ml-3 text-slate-400 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-search text-sm"></i>
+                    </button>
+                </div>
+            </div>
 
-            <!-- User Area -->
-            <div class="flex items-center gap-5">
-                <button class="text-slate-500 hover:text-slate-900 transition-colors"><i class="far fa-plus-square text-xl"></i></button>
-                <button class="text-slate-500 hover:text-slate-900 transition-colors"><i class="far fa-bell text-xl"></i></button>
-                <div class="w-8 h-8 rounded-full overflow-hidden bg-slate-100">
-                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjXjPnBLg5BILdhJZ5r6D9RHOrxGnJDvsiolF4J728ceTbelPvTn5eGA2_F6PUbr1WVJSc8qD-cmf6lRM-zVwWcImw-Bw0BXv9dUmeYUAP5qJTl5dsp-uD_uk-w4_WokriWeHC1UW8xmPCKlhFAwnX_C20Hv3rEw_UnqHdfoiRNewateHkCex4q8HUZG1wWgMQWgHigGLpjytd-lWxQ2YsCs5KhjSjcreWVTDFcYxbXwnUWRJdE1uNExeIQD6To3aqoMZpHsIhcITnjEqMUwgSCWYr5aMxSXZ-VTBfCr7lbSup3J3b_K1CYJdg-crEVCiMTD0CVQHJm2MtmR7qNn5WqWe7SJDEF9tkYhLLYAoDaY3pGwfSD9SCxV1Q4MxISfpTikAaxcZ6K8nb5Zb0BMGWU9kuW9chN6ZaNibHXaQWumvcqxz4ITSaV3CM4QTKqUJcCmxXX7fMmUh-xMFrjEsmZJqOkEA2LWkARPI8FXQ717MWC7jinaSLMURdm4IKO4C9iM1yoQrJvXW1N4q-g5ZI2HWQiksZVZX3lsI0tK2JtGufk0U-7hzmY0Bnt1DCYVKeJ74FC_EQ62CGIFGvK9Y6qjOKHQ6Vn0I5rbbGdEShsTHB4rc9QtEh4z_Za_aD49teosLv9MpmUpsgSfqR16uuwmY-sQV8hKEe3nrhioGLleTKE6RVvdpexQUQ-Zz6Gb6I0ASDfVVSD_-TbCFRZCP3bMUAXudr2AbXajg_Hsx735SDpsKK1RgxSwF-gfsHDAHcO96C3EE4uOnZiw_oVNS0lmiz9Ti0I-p_5kVP_LHgf-sGEaMWsQVi_TTBckO9NPhb39ZQECiFwUAbzdjAYqhBuIoL1jT0ymHZrwgg-SbL1za9mtDabvhognp2yie_ZSzGCtmNSzg2AOg5phgAjRC9b7GrxlfVwUzM1XFbdvge8rlm_jnrdgu-m-nk8TPd-zjpstbMIwl-Q1JuGlN5r_cmMF8gcRCuMBg55cNL174PuZr4c1-5fmYq1A-dKiIaSrz_9Rg42nP9BghVOtwWC-UmkSVd33vcLRkzesBtPHr5kuBbDhWP3etlxzNwuVdnHq3UlFDb1joRE2CARPe9fpROAbr0I4do0YLe4=s360-c-no" alt="User">
-                </div>
-            </div>
-        </div>
-    </nav>
+            <!-- User Area -->
+            <div class="flex items-center gap-5">
+                <button class="text-slate-500 hover:text-slate-900 transition-colors"><i class="far fa-plus-square text-xl"></i></button>
+                <button class="text-slate-500 hover:text-slate-900 transition-colors"><i class="far fa-bell text-xl"></i></button>
+                <div class="w-8 h-8 rounded-full overflow-hidden bg-slate-100">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Asmactrical" alt="User">
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Layout -->
-    <div class="flex max-w-[1800px] mx-auto pt-24 px-6 gap-6">
-        <!-- Sidebar -->
-        <aside class="hidden xl:block w-60 flex-shrink-0 sticky top-24 h-fit">
-            <div class="space-y-1">
-                <div class="flex items-center gap-5 px-4 py-3 rounded-xl bg-slate-100 font-semibold text-sm cursor-pointer">
-                    <i class="fas fa-home text-lg"></i> Trang chủ
-                </div>
-                <div class="flex items-center gap-5 px-4 py-3 rounded-xl hover:bg-slate-50 text-sm cursor-pointer transition-all">
-                    <i class="fas fa-bolt text-lg"></i> Shorts
-                </div>
-                <div class="flex items-center gap-5 px-4 py-3 rounded-xl hover:bg-slate-50 text-sm cursor-pointer transition-all">
-                    <i class="fas fa-layer-group text-lg"></i> Đăng ký
-                </div>
-                <hr class="my-4 border-slate-100">
-                <div class="px-4 py-2 text-[11px] font-bold text-slate-400 uppercase tracking-widest">Bạn</div>
-                <div class="flex items-center gap-5 px-4 py-3 rounded-xl hover:bg-slate-50 text-sm cursor-pointer transition-all">
-                    <i class="fas fa-clock-rotate-left text-lg"></i> Lịch sử
-                </div>
-                <div class="flex items-center gap-5 px-4 py-3 rounded-xl hover:bg-slate-50 text-sm cursor-pointer transition-all">
-                    <i class="fas fa-play-circle text-lg"></i> Video của bạn
-                </div>
-            </div>
-        </aside>
+    <!-- Layout -->
+    <div class="flex max-w-[1800px] mx-auto pt-24 px-6 gap-6">
+        <!-- Sidebar -->
+        <aside class="hidden xl:block w-60 flex-shrink-0 sticky top-24 h-fit">
+            <div class="space-y-1">
+                <div class="flex items-center gap-5 px-4 py-3 rounded-xl bg-slate-100 font-semibold text-sm cursor-pointer">
+                    <i class="fas fa-home text-lg"></i> Trang chủ
+                </div>
+                <div class="flex items-center gap-5 px-4 py-3 rounded-xl hover:bg-slate-50 text-sm cursor-pointer transition-all">
+                    <i class="fas fa-bolt text-lg"></i> Shorts
+                </div>
+                <div class="flex items-center gap-5 px-4 py-3 rounded-xl hover:bg-slate-50 text-sm cursor-pointer transition-all">
+                    <i class="fas fa-layer-group text-lg"></i> Đăng ký
+                </div>
+                <hr class="my-4 border-slate-100">
+                <div class="px-4 py-2 text-[11px] font-bold text-slate-400 uppercase tracking-widest">Bạn</div>
+                <div class="flex items-center gap-5 px-4 py-3 rounded-xl hover:bg-slate-50 text-sm cursor-pointer transition-all">
+                    <i class="fas fa-clock-rotate-left text-lg"></i> Lịch sử
+                </div>
+                <div class="flex items-center gap-5 px-4 py-3 rounded-xl hover:bg-slate-50 text-sm cursor-pointer transition-all">
+                    <i class="fas fa-play-circle text-lg"></i> Video của bạn
+                </div>
+            </div>
+        </aside>
 
-        <!-- Main Content -->
-        <main id="mainView" class="flex-1 overflow-hidden">
-            <!-- First Section: 6 Videos -->
-            <div id="videoGrid1" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 mb-12">
-                <!-- Skeleton Loading -->
-            </div>
+        <!-- Main Content -->
+        <main id="mainView" class="flex-1 overflow-hidden">
+            <!-- First Section: 6 Videos -->
+            <div id="videoGrid1" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 mb-12">
+                <!-- Skeleton Loading -->
+            </div>
 
-            <!-- Shorts Section -->
-            <div class="mb-12">
-                <div class="flex items-center gap-3 mb-6">
-                    <i class="fas fa-bolt text-red-500 text-xl"></i>
-                    <h2 class="text-xl font-bold tracking-tight">Shorts</h2>
-                </div>
-                <div id="shortsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <!-- Shorts will appear here -->
-                </div>
-            </div>
+            <!-- Shorts Section -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <i class="fas fa-bolt text-red-500 text-xl"></i>
+                    <h2 class="text-xl font-bold tracking-tight">Shorts</h2>
+                </div>
+                <div id="shortsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- Shorts will appear here -->
+                </div>
+            </div>
 
-            <!-- Second Section: More Videos -->
-            <div id="videoGrid2" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 pb-20">
-                <!-- More videos -->
-            </div>
-        </main>
+            <!-- Second Section: More Videos -->
+            <div id="videoGrid2" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 pb-20">
+                <!-- More videos -->
+            </div>
+        </main>
 
-        <!-- Player View (Hidden by default) -->
-        <main id="playerView" class="hidden flex-1">
-            <div class="player-grid">
-                <!-- Left: Big Player -->
-                <div class="space-y-6">
-                    <div class="aspect-video w-full bg-black rounded-2xl overflow-hidden shadow-sm">
-                        <div id="ytPlayer"></div>
-                    </div>
-                    <div class="px-2">
-                        <h1 id="playerTitle" class="text-xl font-bold text-slate-900 leading-tight mb-4">Tiêu đề video</h1>
-                        <div class="flex flex-wrap items-center justify-between gap-4">
-                            <div class="flex items-center gap-4">
-                                <img id="playerChannelImg" src="" class="w-10 h-10 rounded-full bg-slate-100">
-                                <div>
-                                    <h3 id="playerChannelName" class="font-bold text-sm text-slate-900">Tên kênh</h3>
-                                    <p class="text-xs text-slate-500 font-medium">1.2Tr người đăng ký</p>
-                                </div>
-                                <button class="ml-4 px-5 py-2 bg-slate-900 text-white rounded-full text-sm font-bold hover:bg-slate-800 transition-all">Đăng ký</button>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center bg-slate-100 rounded-full overflow-hidden">
-                                    <button class="px-4 py-2 hover:bg-slate-200 text-sm font-bold border-r border-slate-200"><i class="far fa-thumbs-up mr-2"></i> 45K</button>
-                                    <button class="px-4 py-2 hover:bg-slate-200 text-sm font-bold"><i class="far fa-thumbs-down"></i></button>
-                                </div>
-                                <button class="px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-sm font-bold"><i class="fas fa-share mr-2"></i> Chia sẻ</button>
-                                <button class="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center"><i class="fas fa-ellipsis-h"></i></button>
-                            </div>
-                        </div>
-                        <div id="playerDesc" class="mt-4 p-4 bg-slate-50 rounded-xl text-sm text-slate-700 leading-relaxed">
-                            Mô tả video sẽ hiện ở đây...
-                        </div>
-                    </div>
-                </div>
+        <!-- Player View (Hidden by default) -->
+        <main id="playerView" class="hidden flex-1">
+            <div class="player-grid">
+                <!-- Left: Big Player -->
+                <div class="space-y-6">
+                    <div class="aspect-video w-full bg-black rounded-2xl overflow-hidden shadow-sm">
+                        <div id="ytPlayer"></div>
+                    </div>
+                    <div class="px-2">
+                        <h1 id="playerTitle" class="text-xl font-bold text-slate-900 leading-tight mb-4">Tiêu đề video</h1>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-4">
+                                <img id="playerChannelImg" src="" class="w-10 h-10 rounded-full bg-slate-100">
+                                <div>
+                                    <h3 id="playerChannelName" class="font-bold text-sm text-slate-900">Tên kênh</h3>
+                                    <p class="text-xs text-slate-500 font-medium">1.2Tr người đăng ký</p>
+                                </div>
+                                <button class="ml-4 px-5 py-2 bg-slate-900 text-white rounded-full text-sm font-bold hover:bg-slate-800 transition-all">Đăng ký</button>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center bg-slate-100 rounded-full overflow-hidden">
+                                    <button class="px-4 py-2 hover:bg-slate-200 text-sm font-bold border-r border-slate-200"><i class="far fa-thumbs-up mr-2"></i> 45K</button>
+                                    <button class="px-4 py-2 hover:bg-slate-200 text-sm font-bold"><i class="far fa-thumbs-down"></i></button>
+                                </div>
+                                <button class="px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-sm font-bold"><i class="fas fa-share mr-2"></i> Chia sẻ</button>
+                                <button class="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                        </div>
+                        <div id="playerDesc" class="mt-4 p-4 bg-slate-50 rounded-xl text-sm text-slate-700 leading-relaxed">
+                            Mô tả video sẽ hiện ở đây...
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Right: Suggested Videos -->
-                <div id="suggestionList" class="space-y-4">
-                    <!-- Suggestions will appear here -->
-                </div>
-            </div>
-        </main>
-    </div>
+                <!-- Right: Suggested Videos -->
+                <div id="suggestionList" class="space-y-4">
+                    <!-- Suggestions will appear here -->
+                </div>
+            </div>
+        </main>
+    </div>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 
-    <script>
-        const CONFIG = {
-            API_KEY: 'AIzaSyAjI1Pj6PNgis3bfQCHk450VryUTFoE5yY',
-            KEYWORDS: [ 'Space science' , 'Space voyages' , 'Nasa' , 'Space Craft' ,'Earth' , 'Natural' , 'Chill Study' , 'Conan' , 'Shin' , 'Doraemon Offical Channel' ]
-        };
+    <script>
+        const CONFIG = {
+            API_KEY: 'AIzaSyAjI1Pj6PNgis3bfQCHk450VryUTFoE5yY',
+            KEYWORDS: ['Top trending videos', 'Creative design', 'Nature cinematic', 'Indie music live', 'Tech review 2024']
+        };
 
-        let currentVideos = [];
-        let player;
+        let currentVideos = [];
+        let player;
 
-        window.addEventListener('load', () => {
-            const query = CONFIG.KEYWORDS[Math.floor(Math.random() * CONFIG.KEYWORDS.length)];
-            searchVideos(query);
-        });
+        window.addEventListener('load', () => {
+            const query = CONFIG.KEYWORDS[Math.floor(Math.random() * CONFIG.KEYWORDS.length)];
+            searchVideos(query);
+        });
 
-        function onYouTubeIframeAPIReady() {}
+        function onYouTubeIframeAPIReady() {}
 
-        async function searchVideos(query = null) {
-            const searchInput = query || document.getElementById('searchInput').value.trim();
-            if(!searchInput) return;
+        async function searchVideos(query = null) {
+            const searchInput = query || document.getElementById('searchInput').value.trim();
+            if(!searchInput) return;
 
-            // Clear View
-            document.getElementById('mainView').classList.remove('hidden');
-            document.getElementById('playerView').classList.add('hidden');
+            // Clear View
+            document.getElementById('mainView').classList.remove('hidden');
+            document.getElementById('playerView').classList.add('hidden');
 
-            try {
-                const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${encodeURIComponent(searchInput)}&type=video&key=${CONFIG.API_KEY}`;
-                const response = await fetch(url);
-                const data = await response.json();
-                
-                if (data.items) {
-                    currentVideos = data.items;
-                    renderHome(data.items);
-                }
-            } catch (e) {
-                console.error("Lỗi API: ", e);
-            }
-        }
+            try {
+                const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${encodeURIComponent(searchInput)}&type=video&key=${CONFIG.API_KEY}`;
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.items) {
+                    currentVideos = data.items;
+                    renderHome(data.items);
+                }
+            } catch (e) {
+                console.error("Lỗi API: ", e);
+            }
+        }
 
-        function renderHome(items) {
-            const grid1 = document.getElementById('videoGrid1');
-            const shortsGrid = document.getElementById('shortsGrid');
-            const grid2 = document.getElementById('videoGrid2');
+        function renderHome(items) {
+            const grid1 = document.getElementById('videoGrid1');
+            const shortsGrid = document.getElementById('shortsGrid');
+            const grid2 = document.getElementById('videoGrid2');
 
-            grid1.innerHTML = '';
-            shortsGrid.innerHTML = '';
-            grid2.innerHTML = '';
+            grid1.innerHTML = '';
+            shortsGrid.innerHTML = '';
+            grid2.innerHTML = '';
 
-            // 1. First 6 Videos
-            items.slice(0, 6).forEach((item, i) => {
-                grid1.appendChild(createVideoCard(item, i));
-            });
+            // 1. First 6 Videos
+            items.slice(0, 6).forEach((item, i) => {
+                grid1.appendChild(createVideoCard(item, i));
+            });
 
-            // 2. Mock Shorts (YouTube API doesn't distinguish shorts easily in search, so we mock 6 thumbnails)
-            items.slice(6, 12).forEach((item) => {
-                const div = document.createElement('div');
-                div.className = 'short-card group cursor-pointer';
-                div.innerHTML = `
-                    <img src="${item.snippet.thumbnails.high.url}" class="object-cover">
-                    <div class="absolute bottom-0 left-0 p-3 w-full bg-gradient-to-t from-black/60 to-transparent">
-                        <p class="text-white text-xs font-bold line-clamp-2">${item.snippet.title}</p>
-                        <p class="text-white/80 text-[10px] mt-1">1.5Tr lượt xem</p>
-                    </div>
-                `;
-                shortsGrid.appendChild(div);
-            });
+            // 2. Mock Shorts (YouTube API doesn't distinguish shorts easily in search, so we mock 6 thumbnails)
+            items.slice(6, 12).forEach((item) => {
+                const div = document.createElement('div');
+                div.className = 'short-card group cursor-pointer';
+                div.innerHTML = `
+                    <img src="${item.snippet.thumbnails.high.url}" class="object-cover">
+                    <div class="absolute bottom-0 left-0 p-3 w-full bg-gradient-to-t from-black/60 to-transparent">
+                        <p class="text-white text-xs font-bold line-clamp-2">${item.snippet.title}</p>
+                        <p class="text-white/80 text-[10px] mt-1">1.5Tr lượt xem</p>
+                    </div>
+                `;
+                shortsGrid.appendChild(div);
+            });
 
-            // 3. More Videos
-            items.slice(12, 28).forEach((item, i) => {
-                grid2.appendChild(createVideoCard(item, i + 12));
-            });
-        }
+            // 3. More Videos
+            items.slice(12, 28).forEach((item, i) => {
+                grid2.appendChild(createVideoCard(item, i + 12));
+            });
+        }
 
-        function createVideoCard(item, index) {
-            const s = item.snippet;
-            const div = document.createElement('div');
-            div.className = 'video-card group cursor-pointer space-y-3';
-            div.onclick = () => openPlayer(index);
-            div.innerHTML = `
-                <div class="video-thumbnail-wrapper aspect-video">
-                    <img src="${s.thumbnails.high.url}" class="w-full h-full object-cover">
-                </div>
-                <div class="flex gap-3">
-                    <img src="https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(s.channelTitle)}" 
-                         class="w-9 h-9 rounded-full bg-slate-100 flex-shrink-0 object-cover">
-                    <div class="flex-1">
-                        <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-blue-600 transition-colors">
-                            ${s.title}
-                        </h3>
-                        <p class="text-[12px] text-slate-500 mt-1 font-medium">${s.channelTitle}</p>
-                        <p class="text-[12px] text-slate-400 font-medium">85K lượt xem • 2 giờ trước</p>
-                    </div>
-                </div>
-            `;
-            return div;
-        }
+        function createVideoCard(item, index) {
+            const s = item.snippet;
+            const div = document.createElement('div');
+            div.className = 'video-card group cursor-pointer space-y-3';
+            div.onclick = () => openPlayer(index);
+            div.innerHTML = `
+                <div class="video-thumbnail-wrapper aspect-video">
+                    <img src="${s.thumbnails.high.url}" class="w-full h-full object-cover">
+                </div>
+                <div class="flex gap-3">
+                    <img src="https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(s.channelTitle)}" 
+                         class="w-9 h-9 rounded-full bg-slate-100 flex-shrink-0 object-cover">
+                    <div class="flex-1">
+                        <h3 class="text-sm font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-blue-600 transition-colors">
+                            ${s.title}
+                        </h3>
+                        <p class="text-[12px] text-slate-500 mt-1 font-medium">${s.channelTitle}</p>
+                        <p class="text-[12px] text-slate-400 font-medium">85K lượt xem • 2 giờ trước</p>
+                    </div>
+                </div>
+            `;
+            return div;
+        }
 
-        function openPlayer(index) {
-            const video = currentVideos[index];
-            const videoId = video.id.videoId;
-            
-            document.getElementById('mainView').classList.add('hidden');
-            const playerView = document.getElementById('playerView');
-            playerView.classList.remove('hidden');
-            window.scrollTo(0, 0);
+        function openPlayer(index) {
+            const video = currentVideos[index];
+            const videoId = video.id.videoId;
+            
+            document.getElementById('mainView').classList.add('hidden');
+            const playerView = document.getElementById('playerView');
+            playerView.classList.remove('hidden');
+            window.scrollTo(0, 0);
 
-            // Update Info
-            document.getElementById('playerTitle').innerText = video.snippet.title;
-            document.getElementById('playerChannelName').innerText = video.snippet.channelTitle;
-            document.getElementById('playerDesc').innerText = video.snippet.description || "Video chất lượng cao từ đối tác của Asmactrical.";
-            document.getElementById('playerChannelImg').src = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(video.snippet.channelTitle)}`;
+            // Update Info
+            document.getElementById('playerTitle').innerText = video.snippet.title;
+            document.getElementById('playerChannelName').innerText = video.snippet.channelTitle;
+            document.getElementById('playerDesc').innerText = video.snippet.description || "Video chất lượng cao từ đối tác của Asmactrical.";
+            document.getElementById('playerChannelImg').src = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(video.snippet.channelTitle)}`;
 
-            // Load Iframe
-            if (player) {
-                player.loadVideoById(videoId);
-            } else {
-                player = new YT.Player('ytPlayer', {
-                    height: '100%', width: '100%', videoId: videoId,
-                    playerVars: { 'autoplay': 1, 'modestbranding': 1, 'rel': 0 }
-                });
-            }
+            // Load Iframe
+            if (player) {
+                player.loadVideoById(videoId);
+            } else {
+                player = new YT.Player('ytPlayer', {
+                    height: '100%', width: '100%', videoId: videoId,
+                    playerVars: { 'autoplay': 1, 'modestbranding': 1, 'rel': 0 }
+                });
+            }
 
-            // Render Suggestions
-            renderSuggestions(index);
-        }
+            // Render Suggestions
+            renderSuggestions(index);
+        }
 
-        function renderSuggestions(excludeIndex) {
-            const list = document.getElementById('suggestionList');
-            list.innerHTML = '';
-            
-            currentVideos.forEach((item, i) => {
-                if (i === excludeIndex) return;
-                const s = item.snippet;
-                const div = document.createElement('div');
-                div.className = 'flex gap-3 group cursor-pointer';
-                div.onclick = () => openPlayer(i);
-                div.innerHTML = `
-                    <div class="w-40 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-slate-100">
-                        <img src="${s.thumbnails.high.url}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-[13px] font-bold text-slate-900 leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors">${s.title}</h4>
-                        <p class="text-[11px] text-slate-500 mt-1 font-medium">${s.channelTitle}</p>
-                        <p class="text-[11px] text-slate-400 font-medium">102K lượt xem</p>
-                    </div>
-                `;
-                list.appendChild(div);
-            });
-        }
+        function renderSuggestions(excludeIndex) {
+            const list = document.getElementById('suggestionList');
+            list.innerHTML = '';
+            
+            currentVideos.forEach((item, i) => {
+                if (i === excludeIndex) return;
+                const s = item.snippet;
+                const div = document.createElement('div');
+                div.className = 'flex gap-3 group cursor-pointer';
+                div.onclick = () => openPlayer(i);
+                div.innerHTML = `
+                    <div class="w-40 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-slate-100">
+                        <img src="${s.thumbnails.high.url}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-[13px] font-bold text-slate-900 leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors">${s.title}</h4>
+                        <p class="text-[11px] text-slate-500 mt-1 font-medium">${s.channelTitle}</p>
+                        <p class="text-[11px] text-slate-400 font-medium">102K lượt xem</p>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+        }
 
-        document.getElementById('searchInput').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') searchVideos();
-        });
-    </script>
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') searchVideos();
+        });
+    </script>
 </body>
 </html>
